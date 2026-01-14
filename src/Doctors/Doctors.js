@@ -33,10 +33,10 @@ class Doctors extends Component{
 
 			if(result.success){
 				let doctors = [...this.state.doctors];
-				for(let i=0; i<doctors.length; i++){
-					if(doctors[i].doctorId===doctorId){
-						let toggleStatus = doctors[i].onDuty ? false : true;
-						doctors[i].onDuty = toggleStatus;
+				for(let doctor of doctors){
+					if(doctor.doctorId===doctorId){
+						let toggleStatus = doctor.onDuty ? false : true;
+						doctor.onDuty = toggleStatus;
 						break;
 					}
 				}
@@ -51,22 +51,20 @@ class Doctors extends Component{
 
 	render(){
 		return (
-			<React.Fragment>
-				<div className="container">
-					<div className="row">
-						<div className="col-4 card">
-							<NewDoctor refresh={()=>this.refresh()}/>
-						</div>
-						<div className="col-8 card">
-							<AllDoctors
-								doctors={this.state.doctors}
-								toggleDuty={this.toggleDuty}
-								refresh={()=>this.refresh()}
-							/>
-						</div>
+			<div className="container">
+				<div className="row">
+					<div className="col-4 card">
+						<NewDoctor refresh={()=>this.refresh()}/>
+					</div>
+					<div className="col-8 card">
+						<AllDoctors
+							doctors={this.state.doctors}
+							toggleDuty={this.toggleDuty}
+							refresh={()=>this.refresh()}
+						/>
 					</div>
 				</div>
-			</React.Fragment>
+			</div>
 		);
 	}
 
