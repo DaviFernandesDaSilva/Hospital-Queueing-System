@@ -1,5 +1,7 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
+
+
+function createQueue(sequelize, DataTypes) {
   const Queue = sequelize.define('Queue', {
     isActive: DataTypes.BOOLEAN,
     startDate: DataTypes.DATE,
@@ -11,3 +13,5 @@ module.exports = (sequelize, DataTypes) => {
   };
   return Queue;
 };
+
+module.exports = createQueue

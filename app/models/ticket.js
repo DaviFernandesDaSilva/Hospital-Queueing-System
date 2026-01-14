@@ -1,5 +1,7 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
+
+
+function createTicket(sequelize, DataTypes) {
   const Ticket = sequelize.define('Ticket', {
     isActive: DataTypes.BOOLEAN,
     ticketNumber: DataTypes.INTEGER
@@ -12,3 +14,5 @@ module.exports = (sequelize, DataTypes) => {
   };
   return Ticket;
 };
+
+module.exports = createTicket

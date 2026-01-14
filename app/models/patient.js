@@ -1,5 +1,7 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
+
+
+function createPatient(sequelize, DataTypes){
   const Patient = sequelize.define('Patient', {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
@@ -13,3 +15,5 @@ module.exports = (sequelize, DataTypes) => {
   };
   return Patient;
 };
+
+module.exports = createPatient
