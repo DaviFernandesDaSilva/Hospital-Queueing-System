@@ -119,10 +119,6 @@ exports.openNewQueue = async function(req, res){
       result.success = false;
       result.message = 'There is an active queue. Close this queue before opening a new one.';
     } else {
-      let queue = await Queue.create({
-        isActive: true,
-        startDate: new Date()
-      });
       result.success = true;
       result.message = "Successfully opened a new queue."
     }

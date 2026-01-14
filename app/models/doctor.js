@@ -1,5 +1,5 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
+'use strict'; 
+function createDoctor(sequelize, DataTypes) {
   const Doctor = sequelize.define('Doctor', {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
@@ -11,3 +11,5 @@ module.exports = (sequelize, DataTypes) => {
   };
   return Doctor;
 };
+
+module.exports = createDoctor
