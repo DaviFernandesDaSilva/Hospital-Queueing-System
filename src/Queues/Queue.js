@@ -43,33 +43,31 @@ class Queue extends Component{
 
 	render(){
 		return (
-			<React.Fragment>
-			<div className="container">
-				<div className="row">
-					<div className="col-4 card">
-						<div className="container">
-							<div className="row">
-								<QueueControl
-									refreshTickets={() => this.refreshTickets()}
-									activeTickets={this.getActiveTickets()}
-									totalTickets={this.state.tickets.length}/>
-							</div>
+		<div className="container">
+			<div className="row">
+				<div className="col-4 card">
+					<div className="container">
+						<div className="row">
+							<QueueControl
+								refreshTickets={() => this.refreshTickets()}
+								activeTickets={this.getActiveTickets()}
+								totalTickets={this.state.tickets.length}/>
 						</div>
 					</div>
-					<div className="col-8 card">
-						<OnDutyDoctors refreshTickets={() => this.refreshTickets()}/>
-					</div>
 				</div>
-				<div className="row">
-					<div className="col-12 card">
-						<QueueTickets
-							refreshTickets={() => this.refreshTickets()}
-							tickets={this.state.tickets}
-						/>
-					</div>
+				<div className="col-8 card">
+					<OnDutyDoctors refreshTickets={() => this.refreshTickets()}/>
 				</div>
 			</div>
-			</React.Fragment>
+			<div className="row">
+				<div className="col-12 card">
+					<QueueTickets
+						refreshTickets={() => this.refreshTickets()}
+						tickets={this.state.tickets}
+					/>
+				</div>
+			</div>
+		</div>
 		);
 	}
 	  componentDidUpdate(prevProps) {

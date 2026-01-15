@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {config} from '../Config/config';
 import axios from 'axios';
 import socketIOClient from "socket.io-client";
-import { withRouter } from 'react-router-dom';
 
 class DisplayQueue extends Component {
 

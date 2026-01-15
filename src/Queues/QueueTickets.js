@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { config } from '../Config/config.js';
 
 class QueueTickets extends Component{
 	componentDidMount(){
@@ -8,7 +7,6 @@ class QueueTickets extends Component{
 
 	render(){
 		return (
-			<React.Fragment>
           <table className="table table-striped table-hover table-bordered" style={{marginTop:'20px', marginBottom: '20px'}}>
             <thead>
               <tr>
@@ -34,7 +32,6 @@ class QueueTickets extends Component{
 							))}
             </tbody>
           </table>
-			</React.Fragment>
 		);
 	}
 }

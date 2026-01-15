@@ -63,41 +63,39 @@ class QueueControl extends Component{
 
   render(){
     return(
-      <React.Fragment>
-        <div className="card" style={{marginTop: '20px', marginBottom: '20px'}}>
-          {!this.state.hasOpenQueue &&
-          <div className="alert alert-danger">
-            No queue is currently open. Click <em>Open New Queue</em> to start.
-          </div>
-          }
-          <div className="card-header text-danger">
-            Queue Control
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <span className="text text-danger"> Active Tickets: </span>
-              <span className="text">
-                {this.props.activeTickets}
-              </span>
-            </li>
-            <li className="list-group-item">
-              <span className="text text-danger"> Total Tickets: </span>
-              <span className="text">
-                {this.state.totalTickets}
-              </span>
-            </li>
-            <li className="list-group-item">
-              <span className="text text-danger"> Date/Time Started: </span>
-              <span className="text">
-                {this.state.startDate}
-              </span>
-            </li>
-          </ul>
-          <div className="card-body">
-            {this.getButton()}
-          </div>
+      <div className="card" style={{marginTop: '20px', marginBottom: '20px'}}>
+        {!this.state.hasOpenQueue &&
+        <div className="alert alert-danger">
+          No queue is currently open. Click <em>Open New Queue</em> to start.
         </div>
-      </React.Fragment>
+        }
+        <div className="card-header text-danger">
+          Queue Control
+        </div>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            <span className="text text-danger"> Active Tickets: </span>
+            <span className="text">
+              {this.props.activeTickets}
+            </span>
+          </li>
+          <li className="list-group-item">
+            <span className="text text-danger"> Total Tickets: </span>
+            <span className="text">
+              {this.state.totalTickets}
+            </span>
+          </li>
+          <li className="list-group-item">
+            <span className="text text-danger"> Date/Time Started: </span>
+            <span className="text">
+              {this.state.startDate}
+            </span>
+          </li>
+        </ul>
+        <div className="card-body">
+          {this.getButton()}
+        </div>
+      </div>
     );
   }
 
