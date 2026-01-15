@@ -135,38 +135,55 @@ async submit(){
 						value={this.state.lastName}
 					/>
 				</div>
-				<div className="form-group">
-					<label className="text-danger">Gender</label>
-				</div>
-				<div className="form-group">
+				<fieldset className="form-group">
+					{/* O título do grupo agora é um legend, eliminando o erro de associação */}
+					<legend className="text-danger">Gender</legend>
+
 					<div className="form-check form-check-inline">
-					<input className="form-check-input" type="radio" name="gender" id="male" value="Male"
-						onChange={(e) => this.updateGender(e.target.value)}
-						checked={this.state.gender==="Male"}
-					/>
-					<label className="form-check-label" htmlFor="male">
-						Male
-					</label>
-				</div>
-				<div className="form-check form-check-inline">
-					<input className="form-check-input" type="radio" name="gender" id="female" value="Female"
-						onChange={(e) => this.updateGender(e.target.value)}
-						checked={this.state.gender==="Female"}
-					/>
-					<label className="form-check-label" htmlFor="female">
-						Female
-					</label>
-				</div>
-				<div className="form-check form-check-inline">
-					<input className="form-check-input" type="radio" name="gender" id="other" value="Other"
-						onChange={(e) => this.updateGender(e.target.value)}
-						checked={this.state.gender==="Other"}
-					/>
-					<label className="form-check-label" htmlFor="other">
-						Other
-					</label>
-				</div>
-				</div>
+						<input 
+							className="form-check-input" 
+							type="radio" 
+							name="gender" 
+							id="male" 
+							value="Male"
+							onChange={(e) => this.updateGender(e.target.value)}
+							checked={this.state.gender === "Male"}
+						/>
+						<label className="form-check-label" htmlFor="male">
+							Male
+						</label>
+					</div>
+
+					<div className="form-check form-check-inline">
+						<input 
+							className="form-check-input" 
+							type="radio" 
+							name="gender" 
+							id="female" 
+							value="Female"
+							onChange={(e) => this.updateGender(e.target.value)}
+							checked={this.state.gender === "Female"}
+						/>
+						<label className="form-check-label" htmlFor="female">
+							Female
+						</label>
+					</div>
+
+					<div className="form-check form-check-inline">
+						<input 
+							className="form-check-input" 
+							type="radio" 
+							name="gender" 
+							id="other" 
+							value="Other"
+							onChange={(e) => this.updateGender(e.target.value)}
+							checked={this.state.gender === "Other"}
+						/>
+						<label className="form-check-label" htmlFor="other">
+							Other
+						</label>
+					</div>
+				</fieldset>
 				<div className="form-group">
 					<label htmlFor="birthday" className="text-danger">Birthday</label>
 				</div>
