@@ -12,9 +12,9 @@ class ModalExample extends React.Component {
   }
 
   toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
   }
 
   sayHello(){
