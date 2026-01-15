@@ -2,8 +2,12 @@
 const db = require('./models/index.js');
 
 db.sequelize.sync({ alter: true })
-  .then(() => console.log("Banco sincronizado"))
-  .catch(err => console.error("Erro ao sincronizar banco:", err));
+  try {
+    await db.sequelize.sync({ alter: true });
+    console.log("Banco sincronizado");
+  } catch (err) {
+    console.error("Erro ao sincronizar banco:", err);
+  }
 
 
 const express = require("express");
