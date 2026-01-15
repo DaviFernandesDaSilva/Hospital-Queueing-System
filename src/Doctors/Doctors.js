@@ -31,22 +31,18 @@ class Doctors extends Component{
 				doctorId
 			})).data;
 
-			if(result.success){
-				let doctors = [...this.state.doctors];
-				for(let doctor of doctors){
-					if(doctor.doctorId===doctorId){
-						let toggleStatus = doctor.onDuty ? false : true;
-						doctor.onDuty = toggleStatus;
-						break;
-					}
+			if (result.success) {
+				this.setState(prevState => ({
+					doctors: prevState.doctors.map(doctor =>
+					doctor.doctorId === doctorId
+						? { ...doctor, onDuty: !doctor.onDuty }
+						: doctor
+					)
+				}));
 				}
-				this.setState({
-					doctors
-				});
+			} catch (e) {
+				console.error(e);
 			}
-		} catch(e){
-			console.log(e);
-		}
 	}
 
 	render(){
